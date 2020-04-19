@@ -8,7 +8,7 @@ total_tentativas = 3
 tentativas_restantes = total_tentativas
 rodada = 1
 
-while (tentativas_restantes > 0):
+for rodada in range(1,total_tentativas +1):
     
     print("\n\n **** Rodada {} de {} ****".format(rodada,total_tentativas))
     chute = input("\nAdvinhe o seu número: ")
@@ -27,14 +27,13 @@ while (tentativas_restantes > 0):
         print("\nVOCÊ ERROU!")
         if (maior):
             print("O seu chute foi MAIOR que o número secreto!")
-        elif (menor):
+        else:
             print("O seu chute foi MENOR do que o número secreto!")
         
-    rodada = rodada + 1
     tentativas_restantes = tentativas_restantes -1
     print("\nTentativas restantes: ",tentativas_restantes)
 
 
-print("*********************************")
-print("\n\nFim do jogo")
+print("\n\n*********************************")
+print("Fim do jogo")
 print("*********************************")
