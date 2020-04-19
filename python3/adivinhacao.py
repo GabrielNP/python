@@ -10,7 +10,7 @@ rodada = 1
 
 while (tentativas_restantes > 0):
     
-    print("\n\n **** Rodada", rodada, "de",total_tentativas, "****")
+    print("\n\n **** Rodada {} de {} ****".format(rodada,total_tentativas))
     chute = input("\nAdvinhe o seu número: ")
     print("\nVocê digitou: ", chute)
 
