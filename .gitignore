@@ -1,1 +1,6 @@
 python3-django/.vscode/
+python3-django/venv/
+python3-django/simplemooc/simplemooc/__pycache__/
+python3-django/simplemooc/simplemooc/core/__pycache__/
+*/__pycache__/
+*.pyc
