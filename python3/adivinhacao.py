@@ -11,10 +11,17 @@ rodada = 1
 for rodada in range(1,total_tentativas +1):
     
     print("\n\n **** Rodada {} de {} ****".format(rodada,total_tentativas))
-    chute = input("\nAdvinhe o seu número: ")
+    chute = input("\nAdvinhe o seu número (entre 1 e 100): ")
+    chute = int(chute)
+    
+    while (chute < 1 or chute > 100):
+        print("\nVocê deve digitar um número entre 1 e 100!")
+        chute = input("\nAdvinhe seu número (entre 1 e 100): ")
+        chute = int(chute)
+    
     print("\nVocê digitou: ", chute)
 
-    chute = int(chute)
+        
 
     acertou = chute == numero_secreto
     maior = chute > numero_secreto
