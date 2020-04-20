@@ -1,3 +1,9 @@
+# Sequências => strings, listas, range, tupla
+# Sequências imutáveis = Tuplas, range, string
+
+dias = ("Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado")
+>>> type(dias)
+
 tuplas=("gabriel","osvaldo","tadeu")
 tuplas
 
