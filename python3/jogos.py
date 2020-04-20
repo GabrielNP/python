@@ -3,7 +3,7 @@
 import hangman
 import guessing
 
-def escolhe_jogo():
+def select_game():
     print("*********************************")
     print("Escolha o seu jogo")
     print("*********************************")
@@ -17,4 +17,4 @@ def escolhe_jogo():
         guessing.play()
 
 if (__name__ == "__main__"):
-    escolhe_jogo()
+    select_game()
