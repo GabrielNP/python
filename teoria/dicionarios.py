@@ -1,5 +1,6 @@
 # -*-coding:utf-8-*-
 # Dicionários = array associativo, ou seja, um determinado valor passa a ser vinculado a uma chave.
+# São conjuntos de pares chave-valor
 # Ex: dicionario_sites = {"Diego": "diegomariano.com"}
 
 dicionario = {
@@ -39,3 +40,14 @@ telefones
 # Remover
 del telefones["tadeu"]
 telefones
+
+
+person1 = {"Fulano": 39}
+person2 = {"Beltrano": 25}
+person3 = {"Ciclano": 42}
+print()
+people = [person1, person2, person3]
+
+person1["Beltrano"]=25
+person1["Ciclano"]=42
+print(person1['Fulano'])
