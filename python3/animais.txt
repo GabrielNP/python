@@ -1,0 +1,6 @@
+cachorro
+rinoceronte
+hipopotamo
+girafa
+elefante
+camundongo

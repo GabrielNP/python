@@ -4,7 +4,8 @@ import random
 def play():
 
     welcome()
-    secret_word = load_secret_world()
+    content = choose_content()
+    secret_word = load_secret_world(file=content)
     correct_chars = current_word(secret_word)
 
     print("\n\n",correct_chars)    
@@ -39,6 +40,20 @@ def welcome():
     print("*********************************")
     print("Bem vindo ao jogo de Forca!")
     print("*********************************")
+
+
+def choose_content():
+    
+    choice = input("\n(1) Animais (2) Frutas\nQual tema você escolhe para jogar? R: ")
+    choice = int(choice)
+    while (choice < 1 or choice > 2):
+        choice = input("\n(1) Animais (2) Frutas\nVocê deve esolher uma das opções! R: ")
+        choice = int(choice)
+    if (choice == 1):
+        choice = "animais.txt"
+    else:
+        choice = "frutas.txt"
+    return choice
 
 
 def load_secret_world(valid_line=0, file="frutas.txt"):
