@@ -6,7 +6,7 @@ def play():
     welcome()
     secret_word = load_secret_world()
     correct_chars = current_word(secret_word)
-    
+
     print("\n\n",correct_chars)    
    
     hanged = False
@@ -21,16 +21,16 @@ def play():
             score(attempt, correct_chars, secret_word)
         else:
             errors += 1
-            print("Não tem a letra \"{}\"".format(attempt))
-            print("Ops, você errou! Faltam {} tentativas.".format(6-errors))
+            print("\nOps! O.O\nNão tem a letra \"{}\".\n\nFaltam {} tentativas.".format(attempt,7-errors))
+            show_gallow(errors)
 
-        hanged = errors == 6
+        hanged = errors == 7
         won = "_" not in correct_chars
 
     if (won):
         victory_message()
     elif (hanged):
-        game_over_message()
+        game_over_message(secret_word)
 
     end()
 
@@ -76,12 +76,90 @@ def score(attempt, chars, word):
     print(chars)
 
 
+def show_gallow(errors):
+    print("  _______     ")
+    print(" |/      |    ")
+
+    if(errors == 1):
+        print(" |      (_)   ")
+        print(" |            ")
+        print(" |            ")
+        print(" |            ")
+
+    if(errors == 2):
+        print(" |      (_)   ")
+        print(" |      \     ")
+        print(" |            ")
+        print(" |            ")
+
+    if(errors == 3):
+        print(" |      (_)   ")
+        print(" |      \|    ")
+        print(" |            ")
+        print(" |            ")
+
+    if(errors == 4):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |            ")
+        print(" |            ")
+
+    if(errors == 5):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |            ")
+
+    if(errors == 6):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |      /     ")
+
+    if (errors == 7):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |      / \   ")
+
+    print(" |            ")
+    print("_|___         ")
+    print()
+
+
 def victory_message():
-    print("\nVocê ganhou!")
+    print("Parabéns, você ganhou!")
+    print("       ___________      ")
+    print("      '._==_==_=_.'     ")
+    print("      .-\\:      /-.    ")
+    print("     | (|:.     |) |    ")
+    print("      '-|:.     |-'     ")
+    print("        \\::.    /      ")
+    print("         '::. .'        ")
+    print("           ) (          ")
+    print("         _.' '._        ")
+    print("        '-------'       ")
 
 
-def game_over_message():
-    print("\nVocê perdeu!")
+def game_over_message(secret_word):
+    print("Puxa, você foi enforcado!")
+    print("A palavra era {}".format(secret_word))
+    print("    _______________         ")
+    print("   /               \       ")
+    print("  /                 \      ")
+    print("//                   \/\  ")
+    print("\|   XXXX     XXXX   | /   ")
+    print(" |   XXXX     XXXX   |/     ")
+    print(" |   XXX       XXX   |      ")
+    print(" |                   |      ")
+    print(" \__      XXX      __/     ")
+    print("   |\     XXX     /|       ")
+    print("   | |           | |        ")
+    print("   | I I I I I I I |        ")
+    print("   |  I I I I I I  |        ")
+    print("   \_             _/       ")
+    print("     \_         _/         ")
+    print("       \_______/           ")
 
 
 def end():
