@@ -7,14 +7,12 @@ def jogar():
     print("*********************************")
 
     # Abrindo o arquivo de palavras
-    arquivo = open("palavras.txt","r")
-    palavras = []
+    with open("palavras.txt","r") as arquivo:
+        palavras = []
 
-    for linha in arquivo:
-        linha = linha.strip() # Elimina espaços em branco, quebra de linha
-        palavras.append(linha)
-    
-    arquivo.close()
+        for linha in arquivo:
+            linha = linha.strip() # Elimina espaços em branco, quebra de linha
+            palavras.append(linha)
 
 
     # Escolhendo uma das opções
