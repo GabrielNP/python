@@ -1,7 +1,7 @@
 # -*-coding:utf-8-*-
 
-import forca
-import adivinhacao
+import hangman
+import guessing
 
 def escolhe_jogo():
     print("*********************************")
@@ -12,9 +12,9 @@ def escolhe_jogo():
     while (jogo < 1 or jogo> 2):
         jogo = int(input("\n(1) Forca (2) Adivinhação\nVocê deve escolher 1 ou 2.\nR: "))
     if (jogo == 1):
-        forca.play()
+        hangman.play()
     else:
-        adivinhacao.jogar()
+        guessing.play()
 
 if (__name__ == "__main__"):
     escolhe_jogo()

@@ -1,7 +1,7 @@
 # -*-coding:utf-8-*-
 import random
 
-def jogar():
+def play():
     print("*********************************")
     print("Bem vindo ao jogo de Adivinhação!")
     print("*********************************")
