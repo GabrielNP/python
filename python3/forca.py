@@ -41,7 +41,7 @@ def welcome():
     print("*********************************")
 
 
-def load_secret_world(file="frutas.txt"):
+def load_secret_world(valid_line=0, file="frutas.txt"):
     # Abrindo arquivo
     with open(file,"r") as arquivo:
         palavras = []
@@ -50,7 +50,7 @@ def load_secret_world(file="frutas.txt"):
             palavras.append(linha)
             
     # Escolhendo uma das opções
-    numero = random.randrange(0, len(palavras))    
+    numero = random.randrange(valid_line, len(palavras))    
     
     # Definindo a palavra da partida
     palavra_secreta = palavras[numero].upper();
