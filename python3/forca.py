@@ -1,11 +1,28 @@
 # -*-coding:utf-8-*-
+import random
+
 def jogar():
     print("*********************************")
     print("Bem vindo ao jogo de Forca!")
     print("*********************************")
 
+    # Abrindo o arquivo de palavras
+    arquivo = open("palavras.txt","r")
+    palavras = []
+
+    for linha in arquivo:
+        linha = linha.strip() # Elimina espaços em branco, quebra de linha
+        palavras.append(linha)
+    
+    arquivo.close()
+
+
+    # Escolhendo uma das opções
+    numero = random.randrange(0, len(palavras))
+    
+
     # Declaração de variáveis
-    palavra_secreta = "maça".upper();
+    palavra_secreta = palavras[numero].upper();
     enforcou = False
     acertou = False
     erros = 0
