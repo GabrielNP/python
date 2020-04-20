@@ -41,9 +41,9 @@ def welcome():
     print("*********************************")
 
 
-def load_secret_world():
+def load_secret_world(file="frutas.txt"):
     # Abrindo arquivo
-    with open("palavras.txt","r") as arquivo:
+    with open(file,"r") as arquivo:
         palavras = []
         for linha in arquivo:
             linha = linha.strip() # Elimina espaços em branco, quebra de linha
