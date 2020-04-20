@@ -4,14 +4,14 @@ def jogar():
     print("Bem vindo ao jogo de Forca!")
     print("*********************************")
 
-    letras_acertadas = ["_", "_", "_", "_", "_", "_"]
-    print(letras_acertadas)
-
     # Declaração de variáveis
-    palavra_secreta = "banana".upper();
+    palavra_secreta = "maça".upper();
     enforcou = False
     acertou = False
     erros = 0
+    
+    letras_acertadas = ["_" for letra in palavra_secreta]
+    print("\n\n",letras_acertadas)
 
     while (not enforcou and not acertou):
 
