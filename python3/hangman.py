@@ -44,11 +44,11 @@ def welcome():
 
 def choose_content():
     
-    choice = input("\n(1) Animais (2) Frutas\nQual tema você escolhe para jogar? R: ")
-    choice = int(choice)
+    choice = int(input("\n(1) Animais (2) Frutas\nQual tema você escolhe para jogar? R: "))
+    
     while (choice < 1 or choice > 2):
-        choice = input("\n(1) Animais (2) Frutas\nVocê deve esolher uma das opções! R: ")
-        choice = int(choice)
+        choice = int(input("\n(1) Animais (2) Frutas\nVocê deve esolher uma das opções! R: "))
+
     if (choice == 1):
         choice = "animais.txt"
     else:
