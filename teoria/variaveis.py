@@ -1,4 +1,9 @@
-# Declaração de variáveis e tipo de dados com Python.
+# Variáveis e tipos de dados:
+#   inteiro
+#   flutuante
+#   string
+#   boolean
+
 a = 1
 b = 2
 a

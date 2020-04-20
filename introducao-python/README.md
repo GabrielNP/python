@@ -1,1 +1,0 @@
-Estudo baseado no curso https://www.udemy.com/course/intro_python/
