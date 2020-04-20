@@ -12,7 +12,7 @@ def escolhe_jogo():
     while (jogo < 1 or jogo> 2):
         jogo = int(input("\n(1) Forca (2) Adivinhação\nVocê deve escolher 1 ou 2.\nR: "))
     if (jogo == 1):
-        forca.jogar()
+        forca.play()
     else:
         adivinhacao.jogar()
 
