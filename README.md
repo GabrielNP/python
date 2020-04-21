@@ -1,2 +1,2 @@
 # python
-Repositório de estudos de Python
+Repositório de estudos de Python 3
