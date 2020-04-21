@@ -1,75 +1,129 @@
 # -*-coding:utf-8-*-
 import random
 
+
 def play():
+    
+    welcome()
+
+    secret_number = number_generator()
+
+    match_round = 1
+    score = 1000
+
+    total_attempts = select_level()
+    attempts_left = total_attempts
+
+    for match_round in range(1,total_attempts +1):        
+        
+        attempt = request_attempt(match_round, total_attempts)
+        
+        won = attempt == secret_number
+        bigger = attempt > secret_number
+        menor = attempt < secret_number
+
+        
+        if (won):
+            victory_message(score)
+            break
+        else:
+            wrong_choice(bigger)
+            score = lost_points(secret_number,attempt, score)
+            attempts_left = attempt_count(attempts_left)
+
+        if (match_round == total_attempts):
+            game_over_message(secret_number)
+
+    end()
+
+
+def welcome():
     print("*********************************")
     print("Bem vindo ao jogo de Adivinhação!")
     print("*********************************")
 
-    # Variáveis
-    numero_secreto = random.randrange(1,101)
-    rodada = 1
-    pontos = 1000
 
-    # Definição do nível da partida
-    nivel = int(input("\n(1) Fácil (2) Médio (3) Difícil\nQual nível de dificuldade? R: "))
-    while (nivel < 1 or nivel> 3):
-        nivel = int(input("\n(1) Fácil (2) Médio (3) Difícil\nVocê deve escolher de 1 a 3 R: "))
-    if (nivel == 1):
-        total_tentativas = 20
-    elif (nivel == 2):
-        total_tentativas = 10
+def number_generator():
+    return random.randrange(1,101)
+
+
+def select_level():
+    level = int(input("\n(1) Fácil (2) Médio (3) Difícil\nQual nível de dificuldade? R: "))
+    total_attempts = 0
+
+    while (level < 1 or level> 3):
+        level = int(input("\n(1) Fácil (2) Médio (3) Difícil\nVocê deve escolher de 1 a 3 R: "))
+
+    if (level == 1):
+        total_attempts = 20
+    elif (level == 2):
+        total_attempts = 10
     else:
-        total_tentativas = 5
+        total_attempts = 5
+    
+    return total_attempts
 
 
-    tentativas_restantes = total_tentativas
+def request_attempt(match_round, total_attempts):
+    print("\n\n **** Rodada {} de {} ****".format(match_round,total_attempts))
+    attempt = int(input("\nAdvinhe o seu número (entre 1 e 100): "))
 
-    # Laço de execução das partidas
-    for rodada in range(1,total_tentativas +1):
-        
-        # Entrada de dado
-        print("\n\n **** Rodada {} de {} ****".format(rodada,total_tentativas))
-        chute = input("\nAdvinhe o seu número (entre 1 e 100): ")
-        chute = int(chute)
-        
-        # Controle de dado
-        while (chute < 1 or chute > 100):
-            print("\nVocê deve digitar um número entre 1 e 100!")
-            chute = input("\nAdvinhe seu número (entre 1 e 100): ")
-            chute = int(chute)
-        
-        print("\nVocê digitou: ", chute)
+    while (attempt < 1 or attempt > 100):
+        print("\nVocê deve digitar um número entre 1 e 100!")
+        attempt = int(input("\nAdvinhe seu número (entre 1 e 100): "))
+    
+    print("\nVocê digitou: ", attempt)
+    return attempt
+    
 
-            
-        # Variáveis
-        acertou = chute == numero_secreto
-        maior = chute > numero_secreto
-        menor = chute < numero_secreto
-
-        # Processamento e saída de dado
-        if (acertou):
-            print("\nVOCÊ ADIVINHOU! PARABÉNS!\nSua pontuação foi", pontos)
-            break
-        else:
-            print("\nVOCÊ ERROU!")
-            if (maior):
-                print("O seu chute foi MAIOR que o número secreto!")
-            else:
-                print("O seu chute foi MENOR do que o número secreto!")
-            # Cálculo de pontos
-            pontos_perdidos = abs(numero_secreto - chute)
-            pontos = pontos - pontos_perdidos
-        
-
-        # Contagem de tentativas
-        tentativas_restantes = tentativas_restantes -1
-        print("\nTentativas restantes:", tentativas_restantes)
+def victory_message(score):
+    print("\nVOCÊ ADIVINHOU! PARABÉNS!\nSua pontuação foi", score)
 
 
-    print("\n\n*********************************")
-    print("Fim do jogo")
-    print("*********************************")
+def wrong_choice(bigger):
+    print("\nVOCÊ ERROU!")
+    if (bigger):
+        print("O seu chute foi MAIOR que o número secreto!")
+    else:
+        print("O seu chute foi MENOR do que o número secreto!")
+
+
+def lost_points(secret_number, attempt, score):
+    lost_points = abs(secret_number - attempt)
+    return score - lost_points
+
+
+def attempt_count(attempt):
+    attempt = attempt -1
+    print("\nTentativas restantes:", attempt)
+    return attempt
+
+
+def game_over_message(number):
+    print("\nPuxa, você foi perdeu! O número era {}".format(number))
+    print("\n    _______________         ")
+    print("   /               \       ")
+    print("  /                 \      ")
+    print("/\/                   \/\  ")
+    print("\|   XXXX     XXXX   | /   ")
+    print(" |   XXXX     XXXX   |/     ")
+    print(" |   XXX       XXX   |      ")
+    print(" |                   |      ")
+    print(" \__      XXX      __/     ")
+    print("   |\     XXX     /|       ")
+    print("   | |           | |        ")
+    print("   | I I I I I I I |        ")
+    print("   |  I I I I I I  |        ")
+    print("   \_             _/       ")
+    print("     \_         _/         ")
+    print("       \_______/           ")
+
+
+def end():
+    print("\n\n*******************************")
+    print("\tFim do jogo")
+    print("*******************************")
+
 
 if (__name__ == "__main__"):
-    jogar()
+    play()
