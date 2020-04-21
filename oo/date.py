@@ -1,10 +1,10 @@
 class Date:
 
     def __init__(self, day, month, year):
-        self.day = day
-        self.month = month
-        self.year = year
+        self.__day = day
+        self.__month = month
+        self.__year = year
 
     def format_date(self):
-         print(self.day, self.month, self.year, sep='/')
+         print(self.__day, self.__month, self.__year, sep='/')
         
