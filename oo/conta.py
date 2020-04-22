@@ -1,5 +1,7 @@
 class Conta:
 
+    codigo_banco = "001"
+    
     def __init__(self, numero, titular, saldo, limite):
         print("Construindo objeto...{}".format(self))
         self.__numero = numero
@@ -44,10 +46,6 @@ class Conta:
     @limite.setter
     def limite(self, limite):
         self.__limite = limite
-    
-    @staticmethod
-    def codigo_banco():
-        return "001"
 
     @staticmethod
     def codigos_bancos():
