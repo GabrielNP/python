@@ -1,5 +1,3 @@
-`Estudo baseado no curso https://cursos.alura.com.br/course/python-3-intro-orientacao-objetos`
-
 # O paradigma de orientação a objetos
 A ideia central do paradigma da Orientação a Objetos: dado e funcionalidade (comportamentos) andam juntos.
 
@@ -18,5 +16,26 @@ self é a referência que sabe encontrar o objeto construído em memória.
 Dentro da máquina virtual, na execução do Python, existe um processo que procura os objetos esquecidos. Os itens inutilizados serão apagados e o espaço livre em memória será reutilizado. No caso, o responsável por jogar fora esses objetos em desuso é o coletor de lixo (garbage collector, em inglês) do Python.
 
 # None
-Para desreferenciar --> indica que uma referência não aponta mais para um objeto
+Para desreferenciar --> indica que uma referência não aponta mais para um objeto.
 `outraRef = None`
+
+# Métodos estáticos
+Métodos que conseguimos chamar sem uma referência recebem o nome de estáticos, porque eles fazem parte da classe.
+``` @staticmethod
+    def codigo_banco():
+    return "001"
+```
+
+# Atributo estático
+Faz parte da classe, ou seja, é um atributo que pode ser usado sem ter criado um objeto. É possível alterar o valor deste atributo mudando seu estado e não é necessário criar uma instância para acessá-lo. Precisamos usar o __class__ para definir que queremos o atributo de classe. 
+```
+class Pessoa:
+    tamanho_cpf = 11
+
+    def __init__(self, cpf, nome):
+        self.cpf = cpf
+        self.nome = nome
+
+    def valida_cpf(self):
+        return True if len(self.cpf) == __class__.tamanho_cpf else False
+```
