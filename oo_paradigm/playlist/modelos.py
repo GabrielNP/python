@@ -32,11 +32,16 @@ class Serie(Programa):
         self.temporadas = temporadas
 
 
-vingadores = Filme('vingadores - guerra infinita', 2018, 160)
+vingadores = Filme('vingadores guerra infinita', 2018, 160)
 vingadores.dar_likes()
-print("Filme {} - Ano {} - Duracao {} - Likes {}".format(vingadores.nome, vingadores.ano, vingadores.duracao, vingadores.likes))
+print("{} - {} - {} - {}".format(vingadores.nome, vingadores.ano, vingadores.duracao, vingadores.likes))
 
 atlanta = Serie('atlanta', 2018, 2)
 atlanta.dar_likes()
 atlanta.dar_likes()
-print(f'Nome: {atlanta.nome} - Ano: {atlanta.ano} - Temporadas: {atlanta.temporadas} - Likes: {atlanta.likes}')
+print(f'{atlanta.nome} - {atlanta.ano} - {atlanta.temporadas} - {atlanta.likes}')
+
+
+flimes_e_series = [vingadores,atlanta]
+for programa in flimes_e_series:
+    print(f'Nome {programa.nome} - Ano {programa.ano}')

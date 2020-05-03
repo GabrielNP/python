@@ -17,7 +17,9 @@ Dentro da máquina virtual, na execução do Python, existe um processo que proc
 
 # None
 Para desreferenciar --> indica que uma referência não aponta mais para um objeto.
-`outraRef = None`
+```
+outraRef = None
+```
 
 # Métodos estáticos
 Métodos que conseguimos chamar sem uma referência recebem o nome de estáticos, porque eles fazem parte da classe.
@@ -39,3 +41,18 @@ class Pessoa:
     def valida_cpf(self):
         return True if len(self.cpf) == __class__.tamanho_cpf else False
 ```
+
+# Métodos de Classe
+São acessíveis sem necessidade de criar uma instância.
+
+São métodos declarados com @classmethod. Quando criamos um método de classe, temos acesso aos atributos da classe. Da mesma forma com os atributos de classe, podemos acessar estes métodos de dentro dos métodos de instância, a partir de __class__, se desejarmos:
+
+```
+class Funcionario:
+    prefixo = 'Instrutor'
+
+    @classmethod
+    def info(cls):
+        return f'Esse é um {cls.prefixo}'
+```
+Perceba que, ao invés de self, passamos cls para o método, já que neste caso sempre recebemos uma instância da classe como primeiro argumento. O nome cls é uma convenção, assim como self.
