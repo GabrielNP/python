@@ -1,5 +1,5 @@
 class Programa:
-    def __init__(self, nome, ano, duracao):
+    def __init__(self, nome, ano):
         self._nome = nome.title()
         self.ano = ano
         self._likes = 0
@@ -33,7 +33,10 @@ class Serie(Programa):
 
 
 vingadores = Filme('vingadores - guerra infinita', 2018, 160)
-print(vingadores.nome, vingadores.ano, vingadores.duracao)
+vingadores.dar_likes()
+print("Filme {} - Ano {} - Duracao {} - Likes {}".format(vingadores.nome, vingadores.ano, vingadores.duracao, vingadores.likes))
 
 atlanta = Serie('atlanta', 2018, 2)
-print(f'Nome: {atlanta.nome} - Ano: {atlanta.ano} - Temporadas: {atlanta.temporadas}')
+atlanta.dar_likes()
+atlanta.dar_likes()
+print(f'Nome: {atlanta.nome} - Ano: {atlanta.ano} - Temporadas: {atlanta.temporadas} - Likes: {atlanta.likes}')
