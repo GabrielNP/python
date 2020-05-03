@@ -56,3 +56,13 @@ class Funcionario:
         return f'Esse é um {cls.prefixo}'
 ```
 Perceba que, ao invés de self, passamos cls para o método, já que neste caso sempre recebemos uma instância da classe como primeiro argumento. O nome cls é uma convenção, assim como self.
+
+
+# Representação textual de objetos 
+`__str__` Função interna do python dedicada à exibição de textos para o usuário final.
+
+# Representação de log/debugs
+`__repr` 
+``` 
+
+```
