@@ -63,7 +63,7 @@ tmep.dar_likes()
 atlanta.dar_likes()
 
 filmes_e_series = [vingadores,atlanta, tmep, demolidor]
+playlist_fim_de_semana = Playlist('fim de semana', filmes_e_series)
 
-
-for programa in filmes_e_series:
+for programa in playlist_fim_de_semana.programas:
     print(programa)
