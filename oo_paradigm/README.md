@@ -66,3 +66,12 @@ Perceba que, ao invés de self, passamos cls para o método, já que neste caso 
 ``` 
 
 ```
+
+# Python Data Model
+Inicialização	      `  __init__`
+
+Representação	      `  __str__, __repr__`
+
+Container, sequência	`__contains__, __iter__, __len__, __getitem__`
+
+Numéricos	          `  __add__, __sub__, __mul__, __mod__`
