@@ -4,7 +4,7 @@
 x = 2
 x
 
-# igual
+# igual (==)
 x = 2
 y = 3
 z = 3
@@ -12,12 +12,12 @@ print(x == 3)
 print(y == z)
 
 
-# maior, menor
+# maior (>), menor (<)
 soma = x + y
 print(soma > x)
 print(soma < x)
 
 
-#  AND, OR, NOT
+#  AND (and), OR (or), NOT (not)
 print(x == y and x == z)
 print(x ==y or y == z)
