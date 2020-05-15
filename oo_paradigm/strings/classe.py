@@ -10,7 +10,7 @@ class ExtratorArgumentosUrl:
     @staticmethod
     def url_eh_valida(url):
 
-        if url:
+        if url and url.startswith("https://bytebank.com"):
             return True
         else:
             return False
@@ -32,7 +32,8 @@ class ExtratorArgumentosUrl:
             moeda_origem = self.url[indice_inicial_moeda_origem:indice_final_moeda_origem]
 
         indice_inicial_moeda_destino = self.encontra_indice_inicial(busca_moeda_destino)
-        moeda_destino = self.url[indice_inicial_moeda_destino:]
+        indice_final_moeda_destino = self.url.find("&valor=")
+        moeda_destino = self.url[indice_inicial_moeda_destino:indice_final_moeda_destino]
 
         return moeda_origem, moeda_destino
 
@@ -46,10 +47,8 @@ class ExtratorArgumentosUrl:
         self.url = self.url.replace("moedadestino","real",1)
 
 
-    def retornaValor(self):
-
-        buscaValor = "Valor".lower()
-        inicioSubstringValor = self.encontraIndiceInicioSubstring(buscaValor)
-        valor = self.url[inicioSubstringValor:]
-
+    def extrai_valor(self):
+        busca_valor = "valor="
+        indice_inicial_valor = self.encontra_indice_inicial(busca_valor)
+        valor = self.url[indice_inicial_valor:]
         return valor
