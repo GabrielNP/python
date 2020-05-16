@@ -57,3 +57,30 @@ else:
 
 # .replace()
 print(lista.replace("do rei", "da rainha"))
+
+#.startswith()
+url = "https://bytebank.com"
+url1 = "https://buscasites.com/busca?q=https://bytebank.com"
+url2 = "https://bitebank.com.br"
+url3 = "https://bytebank.com/cambio/teste/teste"
+print(f"\nA URL {url1} começa com {url}?", url1.startswith(url))
+print(f"A URL {url2} começa com {url}?", url2.startswith(url))
+print(f"A URL {url3} começa com {url}?", url3.startswith(url))
+
+# regular expressions
+import re
+
+padrao = "[0-9]{4,5}-?[0-9]{4}"
+texto1 = "Meu numero é 1234-1524"
+texto2 = "912345678 é meu celular"
+texto3 = texto1 + " e " + texto2
+
+retorno = re.search(padrao, texto1)
+print("\n", retorno.group())
+retorno = re.search(padrao, texto2)
+print("\n", retorno.group())
+retorno = re.search(padrao, texto3 )
+print("\n", retorno.group())
+retorno = re.findall(padrao, texto3)
+print("\n", retorno)
+
