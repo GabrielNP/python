@@ -7,6 +7,14 @@ class ExtratorArgumentosUrl:
             raise LookupError("URL inválida")
 
 
+    def __str__(self):
+        moeda_origem, moeda_destino = self.extrai_argumentos()
+        valor = self.extrai_valor()
+        return f'Moeda origem: {moeda_origem}\nMoeda destino: {moeda_destino}\nValor: {valor}'
+
+    def __len__(self):
+        return len(self.url)
+
     @staticmethod
     def url_eh_valida(url):
 
