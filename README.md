@@ -15,3 +15,5 @@ Repositório de estudos de Python 3
     https://cursos.alura.com.br/course/python-3-avancando-orientacao-
     
     https://cursos.alura.com.br/course/python-manipulando-strings
+    
+    https://cursos.alura.com.br/course/python-collections-listas-e-tuplas
