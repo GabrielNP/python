@@ -10,10 +10,14 @@ class ExtratorArgumentosUrl:
     def __str__(self):
         moeda_origem, moeda_destino = self.extrai_argumentos()
         valor = self.extrai_valor()
-        return f'Moeda origem: {moeda_origem}\nMoeda destino: {moeda_destino}\nValor: {valor}'
+        return f'Moeda origem: {moeda_origem}\nMoeda destino: {moeda_destino}\nValor: {valor}\n'
 
     def __len__(self):
         return len(self.url)
+
+    def __eq__(self,outra_instancia):
+        print(self.url,"\n",outra_instancia.url) # debug
+        return self.url == outra_instancia.url
 
     @staticmethod
     def url_eh_valida(url):
