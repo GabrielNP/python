@@ -17,3 +17,12 @@ print(z)
 # Exemplo com condição: imprimindo só os impares de x
 g = [i for i in x if i%2==1]
 print(g)
+
+
+# Exemplo com função
+def proximo_ano(idade):
+    return idade + 1
+
+idades = [20, 39, 18, 27, 19]
+idade_ano_que_vem = [proximo_ano(idade) for idade in idades]
+print(idade_ano_que_vem)
