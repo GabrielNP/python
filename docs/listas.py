@@ -66,7 +66,9 @@ print("\ncom o método sorted():", sorted(lista_ordenada)) # Retorna a ordenaç�
 
 # Decrescente
 lista.sort(reverse=True)
-print("\nem sentido decrescente: ", lista)
+print("\nem sentido decrescente com <lista>.sort(reversed=True): ", lista)
+print("\nem sentido descrecente com sorted(<lista>, reversed=True)", sorted(lista_ordenada, reverse=True),
+      "ou com reversed(sorted(<lista>))", list(reversed(sorted(lista_ordenada))))
 
 # Inverter lista
 lista.reverse()
