@@ -19,14 +19,21 @@ print(conjunto)
 
 # ---------------------------------------------------------------------------------------------------------------------
 
-usuarios_data_science = {15,23,43,56}
-usuarios_machine_learning = {13,23, 56, 42}
+A = {15,23,43,56}
+B = {13,23, 56, 42}
+print(f"A: {A}\nB: {B}")
 
 # Tipo de dados: conjunto
-print(type(usuarios_data_science))
+print(type(A))
 
 # União dos conjuntos (equivalente à função extend() das listas)
-print(usuarios_data_science | usuarios_machine_learning)
+print("União:",  A | B)
 
 # Intersecção de conjuntos
-print(usuarios_machine_learning & usuarios_data_science)
+print("Intersecção: ", B & A)
+
+# Operações com conjuntos
+print("Está contido em B, mas não em A:", B - A)
+print("Está contido em A, mas não em B:", A - B)
+
+print("XOR = ou está só no A ou só no B:", A ^ B)
