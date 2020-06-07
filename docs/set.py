@@ -1,4 +1,5 @@
 # Set = Conjuntos, ou seja, cada elemento da lista é único
+# É mutável.
 
 cpf1 = 111
 cpf2 = 222
@@ -37,3 +38,23 @@ print("Está contido em B, mas não em A:", B - A)
 print("Está contido em A, mas não em B:", A - B)
 
 print("XOR = ou está só no A ou só no B:", A ^ B)
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+# Adicionando elementos ao conjunto (pois é mutável)
+usuarios = {1,3,6,4,2,7}
+usuarios.add(9)  # equivalente ao append() da lista
+print(usuarios)
+
+# Tornando o conjunto imutavel
+usuarios2 = frozenset(usuarios)
+print(type(usuarios2))
+# usuarios2.add(10)  # vai dar erro, porque um dado tipo fronzenset não tem o atributo add(), ou seja, fronzenset é imutável
+print(usuarios2)
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Transformando lista em conjunto
+meu_texto = "Oi meu nome é Gabriel e eu gosto de tocar piano eu tenho um piano"
+novo_texto = meu_texto.split(" ")
+print(novo_texto)
+print(set(novo_texto))  # um conjunto a partir da lista existente. Foram removidos os elementos repetidos.
