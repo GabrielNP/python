@@ -14,4 +14,19 @@ print(conjunto)
 
 
 # Não possui índice
-print(conjunto[1])
+# print(conjunto[1]
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+usuarios_data_science = {15,23,43,56}
+usuarios_machine_learning = {13,23, 56, 42}
+
+# Tipo de dados: conjunto
+print(type(usuarios_data_science))
+
+# União dos conjuntos (equivalente à função extend() das listas)
+print(usuarios_data_science | usuarios_machine_learning)
+
+# Intersecção de conjuntos
+print(usuarios_machine_learning & usuarios_data_science)
