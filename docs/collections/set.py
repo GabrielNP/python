@@ -53,8 +53,13 @@ print(type(usuarios2))
 print(usuarios2)
 
 # ---------------------------------------------------------------------------------------------------------------------
+
 # Transformando lista em conjunto
 meu_texto = "Oi meu nome é Gabriel e eu gosto de tocar piano eu tenho um piano"
 novo_texto = meu_texto.split(" ")
 print(novo_texto)
 print(set(novo_texto))  # um conjunto a partir da lista existente. Foram removidos os elementos repetidos.
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+#
