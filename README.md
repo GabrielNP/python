@@ -19,3 +19,5 @@ Repositório de estudos de Python 3
     https://cursos.alura.com.br/course/python-collections-listas-e-tuplas
     
     https://cursos.alura.com.br/course/python-collections-conjuntos-e-dicionarios
+    
+    https://cursos.alura.com.br/course/python-validacao-dados

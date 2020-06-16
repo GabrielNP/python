@@ -1,43 +1,49 @@
 from validate_docbr import CPF, CNPJ
 
-class CpfCnpj:
 
-    def __init__(self, documento, tipo_documento):
-        self.tipo_documento = tipo_documento
-        documento = str(documento)
+class Documento:
 
-        if self.tipo_documento == "cpf":
-            if self.cpf_eh_valido(documento):
-                self.cpf_cnpj = documento
-            else:
-                raise ValueError("CPF inválido!")
-        elif self.tipo_documento == "cnpj":
-            if self.cnpj_eh_valido(documento):
-                self.cpf_cnpj = documento
-            else:
-                raise ValueError("CNPJ inválido!")
+    @staticmethod
+    def cria_documento(documento):
+        if len(documento) == 11:
+            return DocCpf(documento)
+        elif len(documento) == 14:
+            return DocCnpj(documento)
         else:
-            raise ValueError("Documento inválido!")
+            raise ValueError("Quantidade de dígitos incorreta!")
+
+class DocCpf:
+    def __init__(self, documento):
+        if self.valida(documento):
+            self.cpf = documento
+        else:
+            raise ValueError("Cpf inválido!")
 
     def __str__(self):
-        return self.format_document()
+        return self.format()
 
-    def cpf_eh_valido(self, cpf):
-        if len(cpf) == 11:
-            validador = CPF()
-            return validador.validate(cpf)
+    def valida(self, documento):
+        validador = CPF()
+        return validador.validate(documento)
+
+    def format(self):
+        mascara = CPF()
+        return mascara.mask(self.cpf)
+
+class DocCnpj:
+    def __init__(self, documento):
+        if self.valida(documento):
+            self.cnpj = documento
         else:
-            raise ValueError("CPF deve conter 11 dígitos!")
+            raise ValueError("Cnpj inválido!")
 
-    def cnpj_eh_valido(self, cnpj):
-        if len(cnpj) == 14:
-            validador = CNPJ()
-            return validador.validate(cnpj)
+    def __str__(self):
+        return self.format()
 
-    def format_document(self):
-        if self.tipo_documento == "cpf":
-            mascara = CPF()
-            # return mascara.mask(self.cpf)
-        elif self.tipo_documento == "cnpj":
-            mascara = CNPJ()
-        return mascara.mask(self.cpf_cnpj)
+    def valida(self, documento):
+        mascara = CNPJ()
+        return mascara.validate(documento)
+
+    def format(self):
+        mascara = CNPJ()
+        return mascara.mask(self.cnpj)
