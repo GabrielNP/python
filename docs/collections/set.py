@@ -69,10 +69,14 @@ for palavra in outro_texto.split():
     aparicoes[palavra] = ate_agora + 1
 print(aparicoes)
 
+# Outro jeito de fazer: default dict
 from collections import defaultdict
 
 aparicoes = defaultdict(int)
 for palavra in outro_texto.split():
-    ate_agora = aparicoes[palavra]
-    aparicoes[palavra] = ate_agora + 1
+    aparicoes[palavra] += 1
 print(aparicoes)
+
+# Outro jeito de fazer: Counter
+from collections import Counter
+aparicoes = Counter(meu_texto.split())
