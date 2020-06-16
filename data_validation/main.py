@@ -1,5 +1,8 @@
-from cpf import Cpf
+from cpf_cnpj import CpfCnpj
 
 
-cpf = Cpf("44452871801")
-print(cpf)
+cpf = "44452871801"
+cnpj = "28945493000151"
+doc = CpfCnpj(cnpj, "cnpj")
+doc2 = CpfCnpj(cpf, "cpf")
+print(doc, doc2)
