@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 class DatasBr:
@@ -20,4 +20,6 @@ class DatasBr:
     def dia_da_semana(self):
         return self.momento_cadastro.strftime('%A')
 
-
+    def tempo_cadastro(self):
+        tempo_cadastro = datetime.today() + timedelta(days=15, minutes=20,seconds=30) - self.momento_cadastro
+        return tempo_cadastro
