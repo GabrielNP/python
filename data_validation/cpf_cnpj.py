@@ -30,7 +30,9 @@ class DocCpf:
         mascara = CPF()
         return mascara.mask(self.cpf)
 
+
 class DocCnpj:
+
     def __init__(self, documento):
         if self.valida(documento):
             self.cnpj = documento

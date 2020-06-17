@@ -29,3 +29,13 @@ mes = datas_br.mes
 print("Mês:", mes)
 tempo_cadastro = datas_br.tempo_cadastro()
 print(tempo_cadastro)
+
+
+# Validação de CEP
+from acesso_cep import BuscaEndereco
+
+cep = "02402010"
+objeto_cep = BuscaEndereco(cep)
+print("CEP:", objeto_cep)
+bairro, localidade, uf = objeto_cep.acessa_via_cep()
+print(bairro, localidade, uf)
