@@ -1,6 +1,7 @@
 import re
 
-class Telefones_br:
+
+class TelefonesBr:
 
     def __init__(self, telefone):
         if self.valida_telefone(telefone):
