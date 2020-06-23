@@ -41,10 +41,13 @@ class Avaliador:
         self.maior_lance = sys.float_info.min
         self.menor_lance = sys.float_info.max
 
+    def __str__(self):
+        return f'Maior lance: {self.maior_lance}; Menor lance: {self.menor_lance}'
+
     def avalia(self, leilao: Leilao):
         for lance in leilao.lances:
             if lance.valor > self.maior_lance:
-                self.maior_lance - lance.valor
-            elif lance.valor < self.menor_lance:
+                self.maior_lance = lance.valor
+            if lance.valor < self.menor_lance:
                 self.menor_lance = lance.valor
 
