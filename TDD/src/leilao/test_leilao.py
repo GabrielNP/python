@@ -69,12 +69,8 @@ class TestLeilao(TestCase):
 
     def test_nao_deve_permitir_propor_lance_caso_o_usuario_seja_o_mesmo(self):
         outro_lance_do_gui = Lance(self.gui, 200.0)
-        try:
+        with self.assertRaises(ValueError):
             self.leilao.propoe(self.lance_do_gui)
             self.leilao.propoe(outro_lance_do_gui)
-            self.fail(msg='Não lançou exceção!')
-        except ValueError:
-            quantidade_de_lances_recebido = len(self.leilao.lances)
-            self.assertEqual(1, quantidade_de_lances_recebido)
 
 
