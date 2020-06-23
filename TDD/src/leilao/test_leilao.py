@@ -54,13 +54,11 @@ class TestLeilao(TestCase):
         self.assertEqual(menor_valor_esperado, self.leilao.menor_lance)
         self.assertEqual(maior_valor_esperado, self.leilao.maior_lance)
 
-    # se o leilão não tiver lances, deve permitir propor um lance
     def test_deve_permitir_propor_um_lance_caso_o_leilao_nao_tenha_lances(self):
         self.leilao.propoe((self.lance_do_gui))
         quantidade_de_lances_recebido = len(self.leilao.lances)
         self.assertEqual(1, quantidade_de_lances_recebido)
 
-    # se o pultimo usuário for diferente, deve permitir propor o lance
     def test_deve_permitir_propor_um_lance_caso_usuario_seja_diferente(self):
         yuri = Usuario('Yuri')
         lance_do_yuri = Lance(yuri, 150.0)
@@ -69,12 +67,14 @@ class TestLeilao(TestCase):
         quantidade_de_lances_recebido = len(self.leilao.lances)
         self.assertEqual(2, quantidade_de_lances_recebido)
 
-    # se o último usuário for o mesmo, não deve permitir propor o lance
     def test_nao_deve_permitir_propor_lance_caso_o_usuario_seja_o_mesmo(self):
         outro_lance_do_gui = Lance(self.gui, 200.0)
-        self.leilao.propoe(self.lance_do_gui)
-        self.leilao.propoe(outro_lance_do_gui)
-        quantidade_de_lances_recebido = len(self.leilao.lances)
-        self.assertEqual(1, quantidade_de_lances_recebido)
+        try:
+            self.leilao.propoe(self.lance_do_gui)
+            self.leilao.propoe(outro_lance_do_gui)
+            self.fail(msg='Não lançou exceção!')
+        except ValueError:
+            quantidade_de_lances_recebido = len(self.leilao.lances)
+            self.assertEqual(1, quantidade_de_lances_recebido)
 
 
