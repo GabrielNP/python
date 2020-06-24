@@ -1,4 +1,5 @@
 from TDD.src.leilao.dominio import Usuario, Leilao
+import pytest
 
 
 def test_deve_subtrair_valor_da_carteira_do_usuario_quando_esse_propor_um_lance():
@@ -20,7 +21,7 @@ def test_deve_permitir_propor_lance_quando_o_valor_eh_igual_ao_valor_da_carteira
     assert vini.carteira == 0.0
 
 def test_nao_deve_permitir_propor_lance_com_valor_maior_ao_da_carteira():
-    vini = Usuario('Vini', 100.0)
-    leilao = Leilao('Celular')
-    vini.propoe_lance(leilao, 200.0)
-    assert vini.carteira == 100.0
+    with pytest.raises(ValueError):
+        vini = Usuario('Vini', 100.0)
+        leilao = Leilao('Celular')
+        vini.propoe_lance(leilao, 200.0)
