@@ -1,3 +1,6 @@
+from TDD.src.leilao.excecoes import LanceInvalido
+
+
 class Usuario:
 
     def __init__(self, nome, carteira):
@@ -17,7 +20,7 @@ class Usuario:
 
     def propoe_lance(self, leilao, valor):
         if not self._valor_eh_valido(valor):
-            raise ValueError('Não pode propor um lance com o valor maior que o da carteira!')
+            raise LanceInvalido('Não pode propor um lance com o valor maior que o da carteira!')
         lance = Lance(self, valor)
         leilao.propoe(lance)
         self.__carteira -= valor
@@ -58,7 +61,7 @@ class Leilao:
             self.maior_lance = lance.valor
             self.__lances.append(lance)
         else:
-            raise ValueError('Erro ao propor lance!')
+            raise LanceInvalido('Erro ao propor lance!')
 
     def _tem_lances(self):
         return self.__lances
