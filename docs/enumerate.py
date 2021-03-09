@@ -1,37 +1,50 @@
-lista = ["abacate", "bola", "cachorro"]
+"""
+To index each element of a list.
+Returns a list of tuples (index, element)
+"""
 
-for i in range(len(lista)):
-    print(i, lista[i])
+list1 = ["apple", "ball", "dog"]
 
-print("\n\nUsando função enumerate")
+# manual way to index each element of list1
+for i in range(len(list1)):
+    print(i, list1[i])
+    # 0 apple
+    # 1 ball
+    # 2 dog 
 
-for indice, nome in enumerate(lista):
-    print(indice, nome)
-
+# with enumerate() method
+for index, name in enumerate(list1):
+    print(index, name)
+    # 0 apple
+    # 1 ball
+    # 2 dog 
 
 # -------------------------------------------------------------------
-idades = [15, 87, 32, 65, 56, 32, 49, 37]
-print(idades)
-print(range(len(idades)))
-print (enumerate(idades))
-print(list(range(len(idades))))  # forçando a geração de uma lista de valores
-print(list(enumerate(idades)))  #obtendo em tuplas os pares de indice e idade
 
-for valor in enumerate(idades): # retorno empacotado do método enumerated
-    print (valor)
+ages = [15, 87, 32, 65, 56, 32, 49, 37]
 
-for indice, idade in enumerate(idades): # desempacotando as tuplas
-    print(indice, idade)
+print(ages)
+print(range(len(ages)))
+
+enumerate(ages)
+print(list(range(len(ages))))  # forçando a geração de uma lista de valores
+print(list(enumerate(ages)))  #obtendo em tuplas os pares de indice e idade
+
+for value in enumerate(ages): # retorno empacotado do método enumerated
+    print (value)
+
+for index, age in enumerate(ages): # desempacotando as tuplas
+    print(index, age)
 
 
 #
-usuarios = [
+users = [
     ("Guilherme", 37, 1991),
     ("Daniala", 31, 1995),
     ("Paula", 29, 1996)
 ]
 
-for nome, idade, nascimento in usuarios:  # já desempacotando
-    print(nome)
-for nome, _, _, in usuarios:  # já desempacotando ignorando os demais elementos
-    print(nome)
+for name, age, birthday in users:  # já desempacotando
+    print(name)
+for name, _, _, in users:  # já desempacotando ignorando os demais elementos
+    print(name)
