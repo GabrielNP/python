@@ -3,7 +3,7 @@ import numpy as np
 from functools import reduce
 from datetime import datetime
 
-"""Sum the subtraction of each element (sublist) of list"""
+"""This script sums the subtraction of each element (sublist) of list in different implementations and caculates the execution time"""
 
 """ATTENTION! required to run pip install -r requirements.txt"""
 
